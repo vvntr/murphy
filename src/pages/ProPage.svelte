@@ -4,11 +4,13 @@
 
       import {user} from "../stores/user"
 
+      import {login} from "../utils/auth0"
       import {checkout} from "../utils/stripe"
 
       const onGoPro = async () => {
           if(!$user) {
-              netlifyIdentity.open("signup")
+              //   netlifyIdentity.open("signup")
+              login()
               return
           }
 

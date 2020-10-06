@@ -3,11 +3,13 @@
     import {navigate} from "svelte-routing"
     import netlifyIdentity from "netlify-identity-widget"
 
+    import {login} from "../utils/auth0.js"
     import {user} from "../stores/user.js"
     import {isPro} from "../utils/utils.js"
 
-    const onLogin = () => {
-        netlifyIdentity.open("login")
+    const onLogin = async () => {
+        // netlifyIdentity.open("login")
+        await login()
     }
 
     const onLogout = () => {
